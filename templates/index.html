@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>CV and Cover Letter Generator</h1>
+    <form action="{{ url_for('process') }}" method="post" enctype="multipart/form-data">
+        <label>Resume (PDF): <input type="file" name="resume" required></label><br><br>
+        <label>Job Description:</label><br>
+        <textarea name="job_description" rows="10" cols="60" required></textarea><br><br>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>

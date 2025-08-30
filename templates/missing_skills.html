@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Skills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Missing Skills</h1>
+    <p>The job description mentions skills that weren't found in your resume. Do you have any of these?</p>
+    <form action="{{ url_for('generate') }}" method="post">
+        {% for skill in missing_skills %}
+        <label><input type="checkbox" name="add_skill" value="{{ skill }}"> {{ skill }}</label><br>
+        {% endfor %}
+        <br>
+        <button type="submit">Generate CV and Cover Letter</button>
+    </form>
+</body>
+</html>

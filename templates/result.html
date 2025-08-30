@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Documents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename=theme + '.css') }}">
+</head>
+<body>
+    <h1>Your CV</h1>
+    <h2>Skills</h2>
+    <ul>
+    {% for skill in skills %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+    </ul>
+
+    <h1>Cover Letter</h1>
+    <p>Dear Hiring Manager,</p>
+    <p>I am excited to apply for this position. My experience with {{ skills|join(', ') }} makes me a strong candidate. I am eager to contribute these skills to your team.</p>
+    <p>Sincerely,<br>Your Name</p>
+</body>
+</html>
